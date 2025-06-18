@@ -72,6 +72,16 @@ async def audio_speech(request: Request):
     return await proxy_request_by_model(request, "audio/speech")
 
 
+@aliasable_router.post("/audio/speech_instruct")
+async def audio_speech_instruct(request: Request):
+    return await proxy_request_by_model(request, "audio/speech_instruct")
+
+
+@aliasable_router.post("/audio/acestep")
+async def audio_speech_acestep(request: Request):
+    return await proxy_request_by_model(request, "audio/acestep")
+
+
 @aliasable_router.post("/audio/transcriptions")
 async def audio_transcriptions(request: Request):
     return await proxy_request_by_model(request, "audio/transcriptions")
