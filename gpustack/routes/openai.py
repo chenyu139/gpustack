@@ -75,6 +75,21 @@ async def audio_transcriptions(request: Request):
     return await proxy_request_by_model(request, "audio/transcriptions")
 
 
+@aliasable_router.post("/audio/speech_instruct")
+async def audio_speech_instruct(request: Request):
+    return await proxy_request_by_model(request, "audio/speech_instruct")
+
+
+@aliasable_router.post("/audio/acestep")
+async def audio_speech_acestep(request: Request):
+    return await proxy_request_by_model(request, "audio/acestep")
+
+
+@aliasable_router.post("/audio/speech_instruct_zero_shot")
+async def audio_speech_instruct_zero_shot(request: Request):
+    return await proxy_request_by_model(request, "audio/speech_instruct_zero_shot")
+
+
 router = APIRouter()
 router.include_router(aliasable_router)
 
